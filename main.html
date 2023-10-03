@@ -8,37 +8,42 @@
     <title>Portfolio</title>
 </head>
 <body>   
-    <ul class="navbar">
-        <li><a href="#about-me">About me</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#connect">Connect</a></li>
-    </ul> 
+    <nav>
+        <ul class="navbar">
+            <li><a href="#greetings" class="active">Greetings</a></li>
+            <li><a href="#about-me">About me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#connect">Connect</a></li>
+        </ul>
+    </nav>
     
-    <div class="main-container">
+    <section id="greetings" class="greetings-section">
+        <div class="main-container">
 
-        <div class="text">
-            <p>Greetings, my name is</p>
-            <h1>Vinicius Molz</h1>
-            <h2>Aspiring Software Engineer</h2>            
-            
-            <h4>
-                Passionate about engineering and driven 
-                <br>to build innovative solutions and solve 
-                <br>complex problems with code
-            </h4>            
+            <div class="text">
+                <p>Greetings, my name is</p>
+                <h1>Vinicius Molz</h1>
+                <h2>Aspiring Software Engineer</h2>            
+                
+                <h4>
+                    Passionate about engineering and driven 
+                    <br>to build innovative solutions and solve 
+                    <br>complex problems with code
+                </h4>            
 
-            <div class="links">
-                <img src="/svg_icons/github.svg" alt="Example SVG" width="40" height="40">
-                <img src="/svg_icons/linkedin.svg" alt="Example SVG" width="40" height="40">
-                <img src="/svg_icons/mail.svg" alt="Example SVG" width="40" height="40">
+                <div class="links">
+                    <img src="/svg_icons/github.svg" alt="Example SVG" width="40" height="40">
+                    <img src="/svg_icons/linkedin.svg" alt="Example SVG" width="40" height="40">
+                    <img src="/svg_icons/mail.svg" alt="Example SVG" width="40" height="40">
+                </div>
+
             </div>
-
+            <div class="profile-pic">
+                <img src="images/fpu2.jpg" alt="">
+            </div>
         </div>
-        <div class="profile-pic">
-            <img src="images/fpu2.jpg" alt="">
-        </div>
-    </div>
+    </section>
 
     <section id="about-me">
         <div class="about-me-container">
@@ -181,6 +186,7 @@
             </div>
         </div>
     </section> 
+
     <section id="connect" class="contact-me-section">
         <div class="contact-me-container">
             
@@ -202,13 +208,15 @@
                     <label for="message">Message:</label><br>
                     <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
                 </div>
-                
+
                 <div class="contact-me-btn">
                     <input type="submit" value="SEND">
                 </div>
                 
             </form>
         </div>
-    </section>     
+    </section>
+    
+    <script src="func.js"></script>     
 </body>
 </html>
