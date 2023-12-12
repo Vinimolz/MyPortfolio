@@ -39,19 +39,20 @@ body{
 
 
 
+
 /* NAV BAR SECTION */
 /* Needs JS logic */
 .navbar {
     display: flex; /* Use Flexbox */
     list-style: none;
-    background-color: #eae9e9; /* Background color for the navbar */
+    background-color: #F1F0F0; /* Background color for the navbar */
     justify-content: space-between; /* Align items horizontally with space in-between */
     align-items: center; /* Center items vertically */
     padding: 20px 40px; /* Add some padding for spacing */
     justify-content: flex-end;
     position: fixed; /* Fix the navbar at the top of the page */
     top: 0; /* Stick it to the top */
-    width: 100%; /* Take up the full width of the viewport */
+    width: 96.5%; /* Take up the full width of the viewport */
     z-index: 100; /* Ensure the navbar appears above other elements */
 }
 .navbar li a {
@@ -99,7 +100,7 @@ p {
 }
 .profile-pic {
     flex: 40%;
-    padding: 40px 80px 40px 0px;
+    padding: 40px 80px 40px 20px;
     box-sizing: border-box;
 }
 .profile-pic img {
@@ -116,19 +117,27 @@ p {
     margin-left: 15px;
 }
 .text h4{
-    margin-bottom: 95px;
+    margin-bottom: 85px;
     margin-left: 15px;
 }
 .links img{
+    transition: transform 0.1s ease;
     margin-right: 25px;
     margin-left: 15px;
+}
+.links img:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.links a{
+    text-decoration: none;
 }
 
 
 
 /* ABOUT ME SECTION */
 .about-me-section{
-    height: 100vh;
+    height: auto;
     padding: 30px 45px 0px 45px;
 }
 .about-me-container{
@@ -146,49 +155,40 @@ p {
 }
 
 
+
 /* SKILSS SECTION */
 /* Fix responsiveness */
 .skills{
+    height: fit-content;
     padding: 90px 20px 0px 20px;    
 }
-.skills-grid{
-    display: grid;
-    grid-template-columns: 2fr 3fr; /* 1/3 for the left column, 2/3 for the right column */
-    grid-template-rows: repeat(5, 1fr); /* 5 rows with equal height */
-    gap: 10px; /* Adjust the gap between grid items to your preference */
-    width: 100%; /* Make sure the grid takes up the full width */
-    height: 100vh; /* Make sure the grid takes up the full viewport height */
+.container-outer-skills{
+    padding: 20px;
 }
-.left-column {
-    padding: 10px; /* Add padding to the left column as needed */
+.container-inner-skills{    
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
 }
-.right-column {
-    background-color: #f0f0f0; /* Right column background color */
-    padding: 10px; /* Add padding to the right columns as needed */
+.skills-text-area{    
+    flex: 35%;
+    display: flex;
+    align-items: center;
 }
-.row {
-    margin-bottom: 40px; 
-    font-size: 26px;
-    font-weight: lighter;
+.skills-text-area h3{
+    font-size: 1.5rem;
+    margin-left: 40px;
 }
-.left-column .row{
-    height: 86px;   
-    margin-left: 70px;
-    padding-top: 35px;
+.skills-logo-area{
+    flex: 65%;
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
+    flex-wrap: wrap;
 }
-.left-column h3{
-    font-weight: lighter;
-}
-.right-column .row{
-    padding-bottom: 0px;
-}
-.right-column img{
-    padding-bottom: 0px;
-    height: 80px;
-    width: 80px;
-}
-.right-column img:not(:last-child) {
-    margin-right: 50px;
+.skills-logo-area img{
+    height: 5rem;
+    width: 5rem;
 }
 /* SECOND SECTION FOR SKILLS --- DONE */
 .container-skills-snd{
@@ -223,50 +223,60 @@ p {
 
 
 
-/* PROJECT SECTION */
-/* Responsiveness has to be fixed */
-.project-grid{
-    display: grid;
-    height: fit-content;
-    padding-top: 130px;
-    grid-template-columns: 1fr 1fr; /* 1/3 for the left column, 2/3 for the right column */
-    grid-template-rows: repeat(1, 1fr); /* 5 rows with equal height */
-    /*gap: 10px; /* Adjust the gap between grid items to your preference */
-    width: 100%; /* Make sure the grid takes up the full width */
-}
-.project-left-column{
-    padding-left: 60px;
-    align-content: center;    
-}
-.project-right-column{
-    padding-right: 60px;
-}
-.project-row{
+
+/* PROJECTS SECTION */
+.projects-section-2{
     padding: 20px;
-    min-height: 400px;
-    margin-bottom: 50px;
-    background-color: #eae9e9;
-    border: #333 1px solid;
-    border-radius: 10px;   
+    margin-bottom: 70px;
 }
-.project-row.title{
+.add-margin{
+    margin-top: 50px;
+}
+.project-outer-container{    
+    padding: 35px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    border-radius: 10px;
+    gap: 10px;
 }
-.project-row img{
-    padding: 0;
-    height: 350px;
-    width: 450px;
-    border-radius: 10px;
-}
-.project-row.image{
+.project-inner-container{
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    border-radius: 10px;
+    background-color: #eae9e9;
+    padding: 20px;
+}
+.reversed-flex{
+    flex-direction: row-reverse;
+}
+.flex-item-2{    
+    display: flex;
+    border-radius: 10px;
+}
+.flex-item-2.project-description-2{
+    flex: 40%;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 20px;
 }
+.flex-item-2.project-img-2{
+    flex: 60%;
+    justify-content: center;
+    padding: 20px;
+    max-width: 100%;
+}
+.flex-item-2 img{
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-radius: 10px;
+}
+.flex-item-2 h3{
+    margin-bottom: 10px;
+}
+
 
 
 
@@ -289,17 +299,14 @@ p {
     justify-content: center;
     padding-bottom: 20px;
 }
-
 .input-text-contact input{
     margin-bottom: 15px;
 }
-
 .contact-me-btn{
     display: flex;
     justify-content: center;
     margin-top: 10px;
 }
-
 .contact-me-btn input{
     font-size: 16px;
     padding: 10px;
@@ -312,9 +319,109 @@ p {
     transition: transform 0.5s ease;
     cursor: pointer;
 }
-
 .contact-me-btn input:hover{
     transform: scale(1.1);
-    background-color: rgb(102, 157, 213);    
+    background-color: rgb(102, 169, 213);    
+}
+
+
+
+footer{
+    background-color: #eae9e9;
+    height: auto;
+}
+.footer-container{
+    display: flex;
+    padding: 1rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+}
+.footer-links{    
+    display: flex;    
+    gap: 30px;
+}
+.footer-links img{
+    transition: transform 0.1s ease;
+    margin-right: 25px;
+    margin-left: 15px;
+}
+.footer-links img:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.foorter-links a{
+    text-decoration: none;
+}
+.footer-info{   
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.footer-info span{
+    margin-left: 5px;   
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+
+
+
+@media screen and (max-width: 1000px) {
+    /* CSS rules to apply when the viewport is 768 pixels wide or narrower */
+    .project-inner-container{
+        flex-direction: column;
+        height: auto;
+    }
+    .flex-item-2 img{
+        height: 80%;
+        width: auto;
+        max-width: 100%;
+    }
+    .main-container{
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+    }
+    .profile-pic {   
+        display: flex;
+        align-items: center;
+        justify-content: center;     
+        padding: 40px;
+        box-sizing: border-box;
+    }
+    .profile-pic img {
+        width: 50%; /* Maximum width is 100% of its container (50% of the screen) */
+        height: auto;
+        max-width: 100%; /* Maintain the aspect ratio */
+        display: block; /* Remove extra space below the image */
+    }
+}
+@media screen and (max-width: 700px) {
+    .container-inner-skills{    
+        flex-direction: column;
+        gap: 20px;
+    }
+    .skills-text-area{    
+        justify-content: center;
+        gap: 50px;
+    }
+    .skills-logo-area{
+        justify-content: center;
+    }
+    .footer-container{
+        flex-direction: column;   
+        gap: 20px;
+    }
+    .footer-info{   
+        align-items: center;
+        flex-direction: column;
+        
+    }
 }
 

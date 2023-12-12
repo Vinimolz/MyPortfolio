@@ -18,3 +18,22 @@ window.onscroll = () => {
     });
 };
 
+function copyToClipboard(element) {
+    // Create a range to select the text within the email element
+    var range = document.createRange();
+    range.selectNode(element);
+
+    // Create a selection to select the range
+    var selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+
+    // Execute the copy command
+    document.execCommand("copy");
+
+    // Clear the selection
+    selection.removeAllRanges();
+
+    // Optionally, provide user feedback
+    alert("Email copied to clipboard: " + element.innerText);
+}
